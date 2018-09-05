@@ -1,0 +1,32 @@
+header.masthead {
+  position: relative;
+  background-color: $gray-800;
+  // background: url('../img/bg-masthead.jpg') no-repeat center center;
+  background-image: url('../img/artwork.jpg');
+  @include background-cover;
+	width: 100%;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center bottom;
+	z-index: 1;
+  .overlay {
+    position: absolute;
+    background-color: $gray-900;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+
+  h2{
+    position: absolute;
+    width: 100%;
+    bottom: 100px;
+    text-align: center;
+    color: $white;
+    text-transform: uppercase;
+    font-weight: 100;
+    line-height: 1.5;
+  }
+}
