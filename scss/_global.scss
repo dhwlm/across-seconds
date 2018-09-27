@@ -63,17 +63,50 @@ body::-webkit-scrollbar-thumb {
 }
 
 .song-preview{
+  position: relative;
 
   img{
     filter: blur(4px);
     @include transition;
   }
 
+  .overlay{
+
+    &::before{
+      content: '►';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      font-size: 3rem;
+      transform: translate(-50%,-50%);
+      color: $white;
+    }
+    // &::after{
+    //   content: ' ';
+    //   position: absolute;
+    //   left: 50%;
+    //   top: 50%;
+    //   width: 100px;
+    //   height: 100px;
+    //   display: block;
+    //   transform: translate(-50%,-50%);
+    //   background: rgba($gray-900, 0.4);
+    //   border-radius: 50%;
+    // }
+    
+  }
+
   &:hover{
     img{
       filter: blur(0px);
     }
+
+    .overlay{
+      display: none;
+    }
   }
+
+  
 }
 
 .floating-lines{

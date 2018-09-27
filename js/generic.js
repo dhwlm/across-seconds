@@ -15,6 +15,14 @@
     }
   });
 
+  $(".song-preview").mouseenter(function () {
+    var audio = $(this).find('audio')[0];
+    audio.play();
+  }).mouseleave(function (){
+    var audio = $(this).find('audio')[0];
+    audio.pause();
+  });
+
   // Scroll to top button appear
   $(document).scroll(function () {
     var scrollDistance = $(this).scrollTop();
