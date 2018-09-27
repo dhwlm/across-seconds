@@ -43,7 +43,19 @@
           color: $white;
           &:focus,
           &:hover {
-            color: fade-out($white, .2);
+            // color: fade-out($white, .2);
+            position: relative;
+            &::after{
+              content: ' ';
+              position: absolute;
+              bottom: 0;
+              height: 1px;
+              width: 75%;
+              display: block;
+              background: $white;
+              left: 50%;
+              transform: translateX(-50%);
+            }
           }
         }
       }
@@ -63,14 +75,17 @@
     &.is-fixed {
       /* when the user scrolls down, we hide the header right above the viewport */
       position: fixed;
-      top: -165px;
+      top: -97px;
       -webkit-transition: -webkit-transform 0.2s;
       -moz-transition: -moz-transform 0.2s;
       transition: transform 0.2s;
       // border-bottom: 1px solid darken($white, .05);
       box-shadow: 0px 0px 7px 1px rgba($black, .4);
       // background-color: fade-out($white, .1);
-      background-color: rgba($black,.4);
+      background-color: rgba($black,.7);
+      .band-title{
+        height: 60px;
+      }
       .navbar-brand {
         color: $gray-200;
         &:focus,
@@ -132,6 +147,8 @@
   }
 
   @media (max-width:768px){
+    
+
     .as-font, .as-lines{
       background-size: 90%;
     }
@@ -147,3 +164,13 @@
   }
 }
 
+.logo-wrap{
+  display: block;
+
+  &:hover{
+
+    &::after{
+      display: none !important;
+    }
+  }
+}
