@@ -50,6 +50,13 @@ body::-webkit-scrollbar-thumb {
   padding-bottom: 7rem;
 }
 
+@media only screen and (max-width: 767px) {
+  .content-section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
 .video-container {
   position: relative;
   width: 100%;
@@ -106,7 +113,7 @@ body::-webkit-scrollbar-thumb {
   position: fixed;
   right: -250px;
   bottom: -250px;
-  z-index: 9;
+  z-index: 0;
   animation: floatingLines 10s linear infinite;
 }
 
@@ -117,7 +124,7 @@ body::-webkit-scrollbar-thumb {
   position: fixed;
   left: -250px;
   bottom: -250px;
-  z-index: 9;
+  z-index: 0;
   animation: floatingLines 10s linear infinite;
 }
 
@@ -128,7 +135,7 @@ body::-webkit-scrollbar-thumb {
   position: fixed;
   right: -250px;
   top: -250px;
-  z-index: 9;
+  z-index: 0;
   animation: floatingLines 10s linear infinite;
 }
 
@@ -139,7 +146,7 @@ body::-webkit-scrollbar-thumb {
   position: fixed;
   left: -250px;
   top: -250px;
-  z-index: 9;
+  z-index: 0;
   animation: floatingLines 10s linear infinite;
 }
 
@@ -150,6 +157,10 @@ body::-webkit-scrollbar-thumb {
   to {
     transform: rotateZ(360deg);
   }
+}
+
+.text-wrap {
+  word-wrap: break-word;
 }
 
 header.masthead {
@@ -189,6 +200,13 @@ header.masthead h2 {
   line-height: 1.5;
   letter-spacing: .5rem;
   font-size: 2rem;
+}
+
+@media only screen and (max-width: 767px) {
+  header.masthead h2 {
+    font-size: 1.2rem;
+    bottom: 200px;
+  }
 }
 
 #mainNav {

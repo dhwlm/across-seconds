@@ -15,12 +15,14 @@
     }
   });
 
-  $(".song-preview").mouseenter(function () {
-    var audio = $(this).find('audio')[0];
-    audio.play();
-  }).mouseleave(function (){
-    var audio = $(this).find('audio')[0];
-    audio.pause();
+  $(window).on('load', function(){
+    $(".song-preview").mouseenter(function () {
+      var audio = $(this).find('audio')[0];
+      audio.play();
+    }).mouseleave(function () {
+      var audio = $(this).find('audio')[0];
+      audio.pause();
+    });
   });
 
   // Scroll to top button appear
