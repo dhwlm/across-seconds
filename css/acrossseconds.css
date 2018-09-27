@@ -327,7 +327,7 @@ header.masthead h2 {
   display: block;
 }
 
-.logo-wrap:hover::after {
+.logo-wrap:hover::after, .logo-wrap:focus::after {
   display: none !important;
 }
 

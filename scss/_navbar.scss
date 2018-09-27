@@ -167,7 +167,7 @@
 .logo-wrap{
   display: block;
 
-  &:hover{
+  &:hover,&:focus{
 
     &::after{
       display: none !important;
