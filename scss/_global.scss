@@ -83,6 +83,10 @@ body::-webkit-scrollbar-thumb {
     @include transition;
   }
 
+  img.blur{
+    filter: blur(0px);
+  }
+
   .overlay{
 
     &::before{
@@ -109,17 +113,6 @@ body::-webkit-scrollbar-thumb {
     
   }
 
-  &:hover{
-    img{
-      filter: blur(0px);
-    }
-
-    .overlay{
-      display: none;
-    }
-  }
-
-  
 }
 
 .floating-lines{

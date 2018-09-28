@@ -92,6 +92,10 @@ body::-webkit-scrollbar-thumb {
   transition-timing-function: ease-in-out;
 }
 
+.song-preview img.blur {
+  filter: blur(0px);
+}
+
 .song-preview .overlay::before {
   content: '►';
   position: absolute;
@@ -100,14 +104,6 @@ body::-webkit-scrollbar-thumb {
   font-size: 3rem;
   transform: translate(-50%, -50%);
   color: #fff;
-}
-
-.song-preview:hover img {
-  filter: blur(0px);
-}
-
-.song-preview:hover .overlay {
-  display: none;
 }
 
 .floating-lines img {

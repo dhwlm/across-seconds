@@ -17,9 +17,13 @@
 
   $(window).on('load', function(){
     $(".song-preview").mouseenter(function () {
+      $(this).find('img').addClass('blur');
+      $(this).find('.overlay').hide('blur');
       var audio = $(this).find('audio')[0];
       audio.play();
     }).mouseleave(function () {
+      $(this).find('img').removeClass('blur');
+      $(this).find('.overlay').show('blur');
       var audio = $(this).find('audio')[0];
       audio.pause();
     });
