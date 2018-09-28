@@ -15,6 +15,10 @@
     }
   });
 
+  $('#concept-artwork').submit(function(e){
+    window.open("downloads/concept-artworks.zip","_blank");
+  });
+
   $(window).on('load', function(){
     $(".song-preview").mouseenter(function () {
       $(this).find('img').addClass('blur');
