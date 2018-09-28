@@ -212,7 +212,7 @@ header.masthead h2 {
 @media only screen and (max-width: 767px) {
   header.masthead h2 {
     font-size: 1.2rem;
-    bottom: 200px;
+    bottom: 150px;
   }
 }
 
