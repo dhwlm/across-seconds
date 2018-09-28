@@ -82,6 +82,7 @@ body::-webkit-scrollbar-thumb {
 
 .song-preview {
   position: relative;
+  overflow: hidden;
 }
 
 .song-preview img {

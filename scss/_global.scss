@@ -76,6 +76,7 @@ body::-webkit-scrollbar-thumb {
 
 .song-preview{
   position: relative;
+  overflow: hidden;
 
   img{
     filter: blur(4px);
