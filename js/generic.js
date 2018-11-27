@@ -20,16 +20,38 @@
   });
 
   $(window).on('load', function(){
+    $('#btn-click').click(function(){
+      console.log("clicked");
+      
+    });
     $(".song-preview").mouseenter(function () {
       $(this).find('img').addClass('blur');
       $(this).find('.overlay').hide('blur');
       var audio = $(this).find('audio')[0];
-      audio.play();
+      audio.play().catch();
     }).mouseleave(function () {
       $(this).find('img').removeClass('blur');
       $(this).find('.overlay').show('blur');
       var audio = $(this).find('audio')[0];
       audio.pause();
+    });
+
+    $('body').removeClass('fade-out');
+    window.sr = ScrollReveal();
+    // sr.reveal('.text-watermark', { duration: 1000 });
+    // sr.reveal('.main-heading');
+
+    var sequenceInterval = 200;
+    // Custom reveal sequencing by container
+    $('.scroll-reveal__sequence-container').each(function () {
+      var sequenceDelay = 0;
+      $(this).find('.scroll-reveal--sequenced').each(function () {
+        sr.reveal(this, {
+          delay: sequenceDelay,
+          duration: 1000
+        });
+        sequenceDelay += sequenceInterval;
+      });
     });
   });
 
@@ -79,5 +101,7 @@
         this.previousTop = currentTop;
       });
   }
+
+
 
 })(jQuery); // End of use strict
