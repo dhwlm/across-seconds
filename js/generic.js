@@ -102,6 +102,29 @@
       });
   }
 
+  var bg1Parallax = $('#about');
+  var bg2Parallax = $('#gallery');
+  var bg3Parallax = $('#news');
+  $(window).scroll(function () {
+    var ChangeY, speed, diffSpeed;
+    ChangeY = window.pageYOffset;
+    speed = 8;
+    diffSpeed = -(ChangeY / speed);
+    bg1Parallax.css({ "background-position-y": diffSpeed + "px" });
+    
+    if (ChangeY > (bg2Parallax.offset().top - 500 )){
+      diffSpeed = -((ChangeY - bg2Parallax.offset().top )/ speed);
+      bg2Parallax.css({ "background-position-y": diffSpeed + "px" });
+      //   bgParallax.css({ "background-position-y": diffSpeed + "px" });
+    }
+
+    if (ChangeY > (bg3Parallax.offset().top - 500)) {
+      diffSpeed = -((ChangeY - bg3Parallax.offset().top) / speed);
+      bg3Parallax.css({ "background-position-y": diffSpeed + "px" });
+      //   bgParallax.css({ "background-position-y": diffSpeed + "px" });
+    }
+  }).scroll();
+
 
 
 })(jQuery); // End of use strict
