@@ -225,7 +225,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 #about{
-  background-image: url('../img/band-across-seconds-2.jpg');
+  // background-image: url('../img/band-across-seconds-2.jpg');
+  background-image: url('../img/bobby.jpg');
   @include background-cover;
   background-attachment: fixed;
   background-position: center top;

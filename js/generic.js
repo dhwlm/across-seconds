@@ -22,7 +22,6 @@
   $(window).on('load', function(){
     $('#btn-click').click(function(){
       console.log("clicked");
-      
     });
     $(".song-preview").mouseenter(function () {
       $(this).find('img').addClass('blur');
