@@ -20,6 +20,18 @@
   });
 
   $(window).on('load', function(){
+    $("#myVideo").get(0).play();
+
+    $('#myVideo').on('ended', function () {
+      $(this).fadeOut(1000);
+      $('.play-video').fadeIn(700);
+    });
+
+    $('.play-video').click(function(){
+      $(this).fadeOut(700);
+      $("#myVideo").fadeIn(500).get(0).play();
+    });
+
     $('#btn-click').click(function(){
       console.log("clicked");
     });

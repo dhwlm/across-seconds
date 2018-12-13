@@ -5,6 +5,27 @@ html {
   background: #1d2122;
 }
 
+html::after {
+  content: ' ';
+  background: url("../img/lines.png") center center no-repeat #1d2122;
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  z-index: -1;
+  animation: floatingLines 6s linear infinite;
+}
+
+@keyframes floatingLines {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
 body {
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   background: #1d2122;
@@ -219,7 +240,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 #about {
-  background-image: url("../img/band-across-seconds-2.jpg");
+  background-image: url("../img/band-across-seconds-4.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -230,7 +251,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 #news {
-  background-image: url("../img/band-across-seconds-3.jpg");
+  background-image: url("../img/band-across-seconds-2.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -252,6 +273,29 @@ body::-webkit-scrollbar-thumb {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 0;
+}
+
+@media only screen and (max-width: 767px) {
+  #myVideo {
+    display: none;
+  }
+}
+
+.play-video {
+  position: absolute;
+  left: 20px;
+  bottom: 10px;
+  display: none;
+}
+
+.play-video:hover {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 767px) {
+  .play-video {
+    display: none;
+  }
 }
 
 header.masthead {

@@ -2,6 +2,27 @@ html{
   min-height: 100%;
   height: 100%;
   background: $gray-900;
+
+  &::after{
+    content: ' ';
+    background: url('../img/lines.png') center center no-repeat $gray-900;
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    z-index: -1;
+    animation: floatingLines 6s linear infinite;
+  }
+}
+
+@keyframes floatingLines {
+  from{
+    transform: rotateZ(0deg);
+  } 
+  to{
+    transform: rotateZ(360deg);
+  }
 }
 
 body {
@@ -225,7 +246,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 #about{
-  background-image: url('../img/band-across-seconds-2.jpg');
+  background-image: url('../img/band-across-seconds-4.jpg');
   // background-image: url('../img/bobby.jpg');
   @include background-cover;
   background-attachment: fixed;
@@ -234,7 +255,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 #news{
-  background-image: url('../img/band-across-seconds-3.jpg');
+  background-image: url('../img/band-across-seconds-2.jpg');
   @include background-cover;
   background-attachment: fixed;
   background-position: center top;
@@ -255,4 +276,24 @@ body::-webkit-scrollbar-thumb {
   left: 50%;
   transform: translate(-50%,-50%);
   z-index: 0;
+
+  @media only screen and (max-width:767px){
+    display: none;
+  }
+}
+
+.play-video{
+  position: absolute;
+  left: 20px;
+  bottom: 10px;
+  display: none;
+  // z-index: -1;
+
+  &:hover{
+    cursor: pointer;
+  }
+
+  @media only screen and (max-width:767px){
+    display: none;
+  }
 }
