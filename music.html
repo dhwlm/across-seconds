@@ -77,13 +77,13 @@
     <div class="waveform mb-4">
       <div id="waveform"></div>
     </div>
-    <div class="seek">
+    <!-- <div class="seek">
       <form>
         <div class="form-group">
           <input type="range" class="form-control-range" id="seek" value="0" max="">
         </div>
       </form>
-    </div>
+    </div> -->
     <div class="play-pause mb-2">
       <h1>
         <a href="#" title="Play video" class="play text-white active" >
@@ -99,9 +99,9 @@
     <!-- <p class="text-muted"><small>Powered By <a href="https://agaetis.tech/" target="_blank" class="text-muted">Agaetis Technologies</a></small></p> -->
   </div>
 
-  <audio src="audio/FLYFH.mp3" class="song">
+  <!-- <audio src="audio/FLYFH.mp3" class="song">
     Your browser isn't invited for super fun audio time.
-  </audio>
+  </audio> -->
   
   <script>
   var wavesurfer = WaveSurfer.create({
@@ -149,17 +149,17 @@
       });
     });
 
-    $("#seek").bind("change", function() {
-      song.currentTime = $(this).val();               
-    });
+    // $("#seek").bind("change", function() {
+    //   song.currentTime = $(this).val();               
+    // });
 
-    var song = document.querySelector('.song');
+    // var song = document.querySelector('.song');
 
-    song.addEventListener('timeupdate',function (){
+    // song.addEventListener('timeupdate',function (){
       
-      $("#seek").attr("max", song.duration);
-      $('#seek').val(song.currentTime);
-    });
+    //   $("#seek").attr("max", song.duration);
+    //   $('#seek').val(song.currentTime);
+    // });
   </script>
 </body>
 
