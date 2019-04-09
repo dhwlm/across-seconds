@@ -8800,7 +8800,7 @@ body.music .overlay {
   bottom: 0;
   z-index: 0;
   background-size: cover;
-  opacity: .3;
+  opacity: .27;
 }
 
 .as-player {
@@ -8830,6 +8830,7 @@ body.music .overlay {
 
 .player-artwork .artwork-cover .vinyl.rotate {
   animation: floatingLines 6s linear infinite;
+  animation-play-state: paused;
 }
 
 #waveform {

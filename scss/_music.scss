@@ -12,7 +12,7 @@ body.music{
     bottom: 0;
     z-index: 0;
     background-size: cover;
-    opacity: .3;
+    opacity: .27;
   }
 }
 
@@ -43,6 +43,7 @@ body.music{
       
       &.rotate{
         animation: floatingLines 6s linear infinite;
+        animation-play-state: paused;
       }
     }
   }

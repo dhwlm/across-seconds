@@ -64,7 +64,7 @@
 
       <div class="artwork-cover">
         <img src="img/as-album.jpg" alt="" width="200" class="artwork">
-        <img src="img/as-vinyl.png" alt="" width="190" class="vinyl">
+        <img src="img/as-vinyl.png" alt="" width="190" class="vinyl rotate">
       </div>
 
     </div>
@@ -86,7 +86,7 @@
     </div> -->
     <div class="play-pause mb-2">
       <h1>
-        <a href="#" title="Play video" class="play text-white active" >
+        <a href="#" title="Play video" class="play text-white" >
           <i class="far fa-pause-circle"></i>
           <i class="far fa-play-circle"></i>
         </a>
@@ -109,15 +109,14 @@
       waveColor: '#a02a21',
       progressColor: '#ed1b16',
       barGap: 3,
-      barHeight: 1,
+      barHeight: .7,
       barWidth: 3,
-      height: 60,
+      height: 80,
       cursorWidth: 4,
     });
   wavesurfer.load('audio/FLYFH.mp3');
   wavesurfer.on('ready', function () {
-    $('.vinyl').addClass('rotate');
-    wavesurfer.play();
+    // wavesurfer.play();
   });
   </script>
 
@@ -134,8 +133,8 @@
   <!-- <script src="js/animation.min.js"></script> -->
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   <script>
+    var icon = $('.play');
     $(document).ready(function () {
-      var icon = $('.play');
       icon.click(function () {
         if(icon.hasClass('active')){
           wavesurfer.pause();
@@ -148,6 +147,14 @@
         return false;
       });
     });
+
+     $(document).ready(function () {
+       $(this).click(function(){
+         wavesurfer.play();
+         $('.vinyl').css('animationPlayState', 'running');
+         icon.addClass('active');
+       });
+     });
 
     // $("#seek").bind("change", function() {
     //   song.currentTime = $(this).val();               
