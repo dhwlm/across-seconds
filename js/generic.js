@@ -20,6 +20,7 @@
   });
 
   $(window).on('load', function(){
+    
     $("#myVideo").get(0).play();
 
     $('#myVideo').on('ended', function () {
@@ -48,22 +49,7 @@
     });
 
     $('body').removeClass('fade-out');
-    window.sr = ScrollReveal();
-    // sr.reveal('.text-watermark', { duration: 1000 });
-    // sr.reveal('.main-heading');
 
-    var sequenceInterval = 200;
-    // Custom reveal sequencing by container
-    $('.scroll-reveal__sequence-container').each(function () {
-      var sequenceDelay = 0;
-      $(this).find('.scroll-reveal--sequenced').each(function () {
-        sr.reveal(this, {
-          delay: sequenceDelay,
-          duration: 1000
-        });
-        sequenceDelay += sequenceInterval;
-      });
-    });
   });
 
   // Scroll to top button appear

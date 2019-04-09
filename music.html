@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description"
+    content="Across Seconds is a 4 piece experimental/post-prog instrumental rock band. Formed in 2016 in Mumbai, India, they decided to move beyond the clemency of spoken word and let their instruments speak for themselves. Ever since their inception, Across Seconds has always aimed at creating beautifully structured pieces of music that seem like a variegated dance between dreams and reality and take their listeners on a journey from oblivion to tranquility." />
+  <meta name="keywords"
+    content="across seconds, band, music, post rock, indian band, best indian band, top indian band,four lightyears from home, album, music album, post rock album, 4 light years from home, four light years from home, debut album, best album, promising indian band, best indie music, best indie band, best post rock band, post rock band from india" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="img/favicon.png">
+
+  <title>Across Seconds | Official Website</title>
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://acrossseconds.com/img/artwork.jpg">
+
+  <meta name="twitter:title" content="Across Seconds | Album out now">
+  <meta name="twitter:description"
+    content="Across Seconds is a 4 piece experimental/post-prog instrumental rock band. Formed in 2016 in Mumbai, India, they decided to move beyond the clemency of spoken word and let their instruments speak for themselves. Ever since their inception, Across Seconds has always aimed at creating beautifully structured pieces of music that seem like a variegated dance between dreams and reality and take their listeners on a journey from oblivion to tranquility.">
+  <meta name="twitter:creator" content="@https://twitter.com/dhwlm">
+
+
+  <!-- Open Graph -->
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Across Seconds | Album out now">
+  <meta property="og:description"
+    content="Across Seconds is a 4 piece experimental/post-prog instrumental rock band. Formed in 2016 in Mumbai, India, they decided to move beyond the clemency of spoken word and let their instruments speak for themselves. Ever since their inception, Across Seconds has always aimed at creating beautifully structured pieces of music that seem like a variegated dance between dreams and reality and take their listeners on a journey from oblivion to tranquility.">
+  <meta property="og:url" content="http://acrossseconds.com/">
+  <meta property="og:site_name" content="Across Seconds | Four Lightyears from Home">
+  <meta property="og:image" content="http://acrossseconds.com/img/artwork.jpg" />
+
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,400,600" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+  <!-- Custom styles for this template -->
+  <link href="css/acrossseconds.min.css?v=1.1" rel="stylesheet">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <meta name="google-site-verification" content="bMfbVCGaxYtesicWosp_RcLFzemk--AOsk4w4i7siFs" />
+  <script src="https://unpkg.com/wavesurfer.js"></script>
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-98471073-5"></script> -->
+  <!-- <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-98471073-5');
+  </script> -->
+</head>
+
+<body class="music">
+  <div class="overlay"></div>
+  
+  <div class="as-player d-flex flex-column text-center px-4 py-3">
+
+    <div class="player-artwork my-4">
+
+      <div class="artwork-cover">
+        <img src="img/as-album.jpg" alt="" width="200" class="artwork">
+        <img src="img/as-vinyl.png" alt="" width="190" class="vinyl">
+      </div>
+
+    </div>
+    <div class="title text-white">
+      <h5>Four Lightyears From Home</h5>
+    </div>
+    <div class="artist text-white mb-4 ">
+      <h6 class="font-weight-normal">Across Seconds</h6>
+    </div>
+    <div class="waveform mb-4">
+      <div id="waveform"></div>
+    </div>
+    <div class="seek">
+      <form>
+        <div class="form-group">
+          <input type="range" class="form-control-range" id="seek" value="0" max="">
+        </div>
+      </form>
+    </div>
+    <div class="play-pause mb-2">
+      <h1>
+        <a href="#" title="Play video" class="play text-white active" >
+          <i class="far fa-pause-circle"></i>
+          <i class="far fa-play-circle"></i>
+        </a>
+    </h1> 
+    </div>
+    <div class="footer mb-4">
+      <a href="https://www.acrossseconds.com/?#store" class="btn btn-secondary rounded text-uppercase"> View full album</a>
+    </div>
+    <p><small><a href="https://www.acrossseconds.com/" target="_blank" class="text-muted">www.acrossseconds.com</a></small></p>
+    <!-- <p class="text-muted"><small>Powered By <a href="https://agaetis.tech/" target="_blank" class="text-muted">Agaetis Technologies</a></small></p> -->
+  </div>
+
+  <audio src="audio/FLYFH.mp3" class="song">
+    Your browser isn't invited for super fun audio time.
+  </audio>
+  
+  <script>
+  var wavesurfer = WaveSurfer.create({
+      container: '#waveform',
+      waveColor: '#a02a21',
+      progressColor: '#ed1b16',
+      barGap: 3,
+      barHeight: 1,
+      barWidth: 3,
+      height: 60,
+      cursorWidth: 4,
+    });
+  wavesurfer.load('audio/FLYFH.mp3');
+  wavesurfer.on('ready', function () {
+    $('.vinyl').addClass('rotate');
+    wavesurfer.play();
+  });
+  </script>
+
+  <!-- Bootstrap core JavaScript -->
+  <!-- <script src="js/TweenLite.min.js"></script>
+      <script src="js/EasePack.min.js"></script>
+      <script src="js/rAF.min.js"></script>
+      <script src="js/acrossseconds.min.js"></script> -->
+  <script src="js/anime.min.js"></script>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/jquery/jquery.easing.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="js/generic.min.js"></script> -->
+  <!-- <script src="js/animation.min.js"></script> -->
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <script>
+    $(document).ready(function () {
+      var icon = $('.play');
+      icon.click(function () {
+        if(icon.hasClass('active')){
+          wavesurfer.pause();
+          $('.vinyl').css('animationPlayState','paused');
+        }else{
+          wavesurfer.play();
+          $('.vinyl').css('animationPlayState', 'running');
+        }
+        icon.toggleClass('active');
+        return false;
+      });
+    });
+
+    $("#seek").bind("change", function() {
+      song.currentTime = $(this).val();               
+    });
+
+    var song = document.querySelector('.song');
+
+    song.addEventListener('timeupdate',function (){
+      
+      $("#seek").attr("max", song.duration);
+      $('#seek').val(song.currentTime);
+    });
+  </script>
+</body>
+
+</html>

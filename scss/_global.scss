@@ -3,17 +3,17 @@ html{
   height: 100%;
   background: $gray-900;
 
-  &::after{
-    content: ' ';
-    background: url('../img/lines.png') center center no-repeat $gray-900;
-    position: fixed;
-    width: 200%;
-    height: 200%;
-    top: -50%;
-    left: -50%;
-    z-index: -1;
-    animation: floatingLines 6s linear infinite;
-  }
+  // &::after{
+  //   content: ' ';
+  //   background: url('../img/lines.png') center center no-repeat $gray-900;
+  //   position: fixed;
+  //   width: 200%;
+  //   height: 200%;
+  //   top: -50%;
+  //   left: -50%;
+  //   z-index: -1;
+  //   animation: floatingLines 6s linear infinite;
+  // }
 }
 
 @keyframes floatingLines {
@@ -51,7 +51,7 @@ h4,
 h5,
 h6 {
   @include body-font;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 a{
