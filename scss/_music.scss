@@ -21,11 +21,16 @@ body.music{
   margin: 0 auto;
   position: relative;
   z-index: 1;
+
+  .title,.artist,.waveform,.play-pause,.footer{
+    opacity: 0;
+  }
 }
 
 .player-artwork{
   
   .artwork-cover{
+    opacity: 0;
     position: relative;
     filter: drop-shadow(15px 11px 10px rgba($black,.5));
     
@@ -75,6 +80,7 @@ body.music{
 }
 
 .play-pause{
+  
   .play{
 
     &.active{

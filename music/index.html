@@ -115,9 +115,7 @@
       cursorWidth: 4,
     });
   wavesurfer.load('../audio/FLYFH.mp3');
-  wavesurfer.on('ready', function () {
-    // wavesurfer.play();
-  });
+
   </script>
 
   <!-- Bootstrap core JavaScript -->
@@ -130,9 +128,56 @@
   <script src="../vendor/jquery/jquery.easing.min.js"></script>
   <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- <script src="../js/generic.min.js"></script> -->
-  <!-- <script src="../js/animation.min.js"></script> -->
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   <script>
+    wavesurfer.on('ready', function () {
+      anime.timeline({
+        targets: ".artwork-cover",
+        easing: "easeOutExpo",
+      })
+      .add({
+        opacity: [0,1],
+        translateY: [100,0],
+        duration: 2000,
+      })
+      .add({
+        targets: ".artwork-cover .vinyl",
+        opacity: 1,
+        top: ['35%', 0],
+        duration: 1500,
+      },'-=700')
+      .add({
+        targets: ".as-player .title",
+        opacity: [0,1],
+        translateY: [40, 0],
+        duration: 700,
+      })
+      .add({
+        targets: ".as-player .artist",
+        opacity: [0,1],
+        translateY: [40, 0],
+        duration: 700,
+      }, '-=500')
+      .add({
+        targets: ".as-player .waveform",
+        opacity: [0,1],
+        translateY: [40, 0],
+        duration: 700,
+      }, '-=500')
+      .add({
+        targets: ".as-player .play-pause",
+        opacity: [0,1],
+        translateY: [40, 0],
+        duration: 700,
+      }, '-=500')
+      .add({
+        targets: ".as-player .footer",
+        opacity: [0,1],
+        translateY: [40, 0],
+        duration: 700,
+      }, '-=500')
+    });
+
     var icon = $('.play');
     $(document).ready(function () {
       icon.click(function () {
