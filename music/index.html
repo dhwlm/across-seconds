@@ -40,19 +40,19 @@
     integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
   <!-- Custom styles for this template -->
-  <link href="../css/acrossseconds.min.css?v=1.2" rel="stylesheet">
+  <link href="../css/acrossseconds.min.css?v=1.3" rel="stylesheet">
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <meta name="google-site-verification" content="bMfbVCGaxYtesicWosp_RcLFzemk--AOsk4w4i7siFs" />
   <script src="https://unpkg.com/wavesurfer.js"></script>
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-98471073-5"></script> -->
-  <!-- <script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-98471073-5"></script>
+  <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'UA-98471073-5');
-  </script> -->
+  </script>
 </head>
 
 <body class="music">
@@ -65,6 +65,34 @@
       <div class="artwork-cover">
         <img src="../img/as-album.jpg" alt="" width="200" class="artwork">
         <img src="../img/as-vinyl.png" alt="" width="190" class="vinyl rotate">
+
+        <div id='universe'>
+          <div id='galaxy'>
+            <div class='circle'></div>
+            <div class='circle2'></div>
+            <div class='circle3'></div>
+            <div id='orbit0'>
+              <div id='pos0'>
+                <div id='dot0'></div>
+              </div>
+            </div>
+            <div id='orbit1'>
+              <div id='pos1'>
+                <div id='dot1'></div>
+              </div>
+            </div>
+            <div id='orbit2'>
+              <div id='pos2'>
+                <div id='dot2'></div>
+              </div>
+            </div>
+            <div id='orbit3'>
+              <div id='pos3'>
+                <div id='dot3'></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -131,8 +159,9 @@
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   <script>
     wavesurfer.on('ready', function () {
+      $('#universe').remove();
       anime.timeline({
-        targets: ".artwork-cover",
+        targets: ".artwork-cover .artwork",
         easing: "easeOutExpo",
       })
       .add({

@@ -8815,7 +8815,6 @@ body.music .overlay {
 }
 
 .player-artwork .artwork-cover {
-  opacity: 0;
   position: relative;
   filter: drop-shadow(15px 11px 10px rgba(0, 0, 0, 0.5));
 }
@@ -8824,6 +8823,7 @@ body.music .overlay {
   padding-top: 100px;
   position: relative;
   z-index: 1;
+  opacity: 0;
 }
 
 .player-artwork .artwork-cover .vinyl {
@@ -8831,6 +8831,7 @@ body.music .overlay {
   left: 50%;
   margin-left: -95px;
   z-index: 0;
+  opacity: 0;
 }
 
 .player-artwork .artwork-cover .vinyl.rotate {
@@ -8868,6 +8869,218 @@ body.music .overlay {
 
 .play-pause .play:not(.active) .fa-pause-circle {
   display: none;
+}
+
+#orbit0 {
+  animation-delay: 0s;
+}
+
+#pos0 {
+  animation-delay: 0s;
+}
+
+#dot0 {
+  animation-delay: 0s;
+}
+
+#orbit1 {
+  animation-delay: -1s;
+}
+
+#pos1 {
+  animation-delay: -1s;
+}
+
+#dot1 {
+  animation-delay: -1s;
+}
+
+#orbit2 {
+  animation-delay: -2s;
+}
+
+#pos2 {
+  animation-delay: -2s;
+}
+
+#dot2 {
+  animation-delay: -2s;
+}
+
+#universe {
+  z-index: 1;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+#galaxy {
+  transform: rotateX(75deg);
+  transform-style: preserve-3d;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.circle {
+  border-radius: 50%;
+  border: 1px solid #eee;
+  width: 1em;
+  height: 1em;
+  margin-top: -.5em;
+  margin-left: -.5em;
+  animation: spinner 1.5s infinite ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: rotateX(-75deg);
+}
+
+.circle2 {
+  border-radius: 50%;
+  border: 1px solid #eee;
+  width: 1em;
+  height: 1em;
+  margin-top: -.5em;
+  margin-left: -.5em;
+  animation: spinner2 2s infinite ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: rotateX(-75deg);
+}
+
+.circle3 {
+  border-radius: 50%;
+  border: 1px solid #eee;
+  width: 1em;
+  height: 1em;
+  margin-top: -.5em;
+  margin-left: -.5em;
+  animation: spinner3 2.5s infinite ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: rotateX(-75deg);
+}
+
+.orbit, #orbit0, #orbit1, #orbit2 {
+  transform-style: preserve-3d;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  animation-name: orbit;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  width: 8em;
+  height: 8em;
+  margin-top: -4em;
+  margin-left: -4em;
+  border-radius: 50%;
+}
+
+.pos, #pos0, #pos1, #pos2 {
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  margin-left: -1em;
+  margin-top: -1em;
+  animation-name: invert;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  left: 50%;
+  top: -1px;
+}
+
+.dot, #dot0, #dot1, #dot2 {
+  background-color: #eee;
+  width: .5em;
+  height: .5em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -.25em;
+  margin-left: -.25em;
+  border-radius: 50%;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+/* Planet animation durations */
+.orbit, #orbit0, #orbit1, #orbit2, .pos, #pos0, #pos1, #pos2 {
+  animation-duration: 3s;
+}
+
+.circle {
+  font-size: 6em;
+}
+
+.circle2 {
+  font-size: 5em;
+}
+
+.circle3 {
+  font-size: 4em;
+}
+
+.dot, #dot0, #dot1, #dot2 {
+  font-size: 0.2em;
+}
+
+@keyframes orbit {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(-360deg);
+  }
+}
+
+@keyframes invert {
+  0% {
+    transform: rotateX(-90deg) rotateY(360deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg);
+  }
+}
+
+@keyframes spinner {
+  0% {
+    -webkit-transform: rotate3d(1, 0, 1, 0deg);
+  }
+  50% {
+    -webkit-transform: rotate3d(1, 0, 1, 180deg);
+  }
+  100% {
+    -webkit-transform: rotate3d(1, 0, 1, 360deg);
+  }
+}
+
+@keyframes spinner2 {
+  0% {
+    -webkit-transform: rotate3d(0, 1, 1, 0deg);
+  }
+  50% {
+    -webkit-transform: rotate3d(0, 1, 1, 180deg);
+  }
+  100% {
+    -webkit-transform: rotate3d(0, 1, 1, 360deg);
+  }
+}
+
+@keyframes spinner3 {
+  0% {
+    -webkit-transform: rotate3d(1, 1, 0, 0deg);
+  }
+  50% {
+    -webkit-transform: rotate3d(1, 1, 0, 180deg);
+  }
+  100% {
+    -webkit-transform: rotate3d(1, 1, 0, 360deg);
+  }
 }
 
 #mainNav {
