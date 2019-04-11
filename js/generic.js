@@ -21,7 +21,9 @@
 
   $(window).on('load', function(){
     
-    $("#myVideo").get(0).play();
+    if ($(window).width() > 767) {
+      $("#myVideo").get(0).play();
+    }
 
     $('#myVideo').on('ended', function () {
       $(this).fadeOut(1000);
