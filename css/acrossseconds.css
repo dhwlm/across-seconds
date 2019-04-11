@@ -8836,7 +8836,7 @@ body.music .overlay {
 
 .player-artwork .artwork-cover .vinyl.rotate {
   animation: floatingLines 6s linear infinite;
-  animation-play-state: running;
+  animation-play-state: paused;
 }
 
 #waveform {

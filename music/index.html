@@ -40,7 +40,7 @@
     integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
   <!-- Custom styles for this template -->
-  <link href="../css/acrossseconds.min.css?v=1.3" rel="stylesheet">
+  <link href="../css/acrossseconds.min.css?v=1.4" rel="stylesheet">
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <meta name="google-site-verification" content="bMfbVCGaxYtesicWosp_RcLFzemk--AOsk4w4i7siFs" />
@@ -61,7 +61,7 @@
   
   <div class="as-player d-flex flex-column text-center px-4 py-3">
 
-    <div class="player-artwork my-4">
+    <div class="player-artwork mb-4">
 
       <div class="artwork-cover">
         <img src="../img/as-album.jpg" alt="" width="200" class="artwork">
@@ -103,7 +103,7 @@
     <div class="artist text-white mb-4 ">
       <h6 class="font-weight-normal">Across Seconds</h6>
     </div>
-    <div class="waveform mb-4">
+    <div class="waveform mb-3">
       <div id="waveform"></div>
     </div>
     <!-- <div class="seek">
@@ -115,7 +115,7 @@
     </div> -->
     <div class="play-pause mb-2">
       <h1>
-        <a href="#" title="Play video" class="play text-white active" >
+        <a href="#" title="Play video" class="play text-white" >
           <i class="far fa-pause-circle"></i>
           <i class="far fa-play-circle"></i>
         </a>
@@ -164,6 +164,7 @@
 
       wavesurfer.on('ready', function () {
         wavesurfer.play();
+        icon.trigger('click');
         $('#universe').remove();
         anime.timeline({
           targets: ".artwork-cover .artwork",
