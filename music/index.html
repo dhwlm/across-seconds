@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1.0, user-scalable=no">
   <meta name="description"
     content="Across Seconds is a 4 piece experimental/post-prog instrumental rock band. Formed in 2016 in Mumbai, India, they decided to move beyond the clemency of spoken word and let their instruments speak for themselves. Ever since their inception, Across Seconds has always aimed at creating beautifully structured pieces of music that seem like a variegated dance between dreams and reality and take their listeners on a journey from oblivion to tranquility." />
   <meta name="keywords"
@@ -44,6 +44,7 @@
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <meta name="google-site-verification" content="bMfbVCGaxYtesicWosp_RcLFzemk--AOsk4w4i7siFs" />
+  <!-- <script src="../js/wavesurfer.min.js"></script> -->
   <script src="https://unpkg.com/wavesurfer.js"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-98471073-5"></script>
   <script>
@@ -114,7 +115,7 @@
     </div> -->
     <div class="play-pause mb-2">
       <h1>
-        <a href="#" title="Play video" class="play text-white" >
+        <a href="#" title="Play video" class="play text-white active" >
           <i class="far fa-pause-circle"></i>
           <i class="far fa-play-circle"></i>
         </a>
@@ -127,25 +128,11 @@
     <!-- <p class="text-muted"><small>Powered By <a href="https://agaetis.tech/" target="_blank" class="text-muted">Agaetis Technologies</a></small></p> -->
   </div>
 
-  <!-- <audio src="audio/FLYFH.mp3" class="song">
-    Your browser isn't invited for super fun audio time.
-  </audio> -->
+  <audio id="song">
+    <source src="../audio/FLYFH.mp3" type="audio/mpeg">
+    <p>Your browser doesn't support HTML5 audio.</p>
+  </audio>
   
-  <script>
-  var wavesurfer = WaveSurfer.create({
-      container: '#waveform',
-      waveColor: '#a02a21',
-      progressColor: '#ed1b16',
-      barGap: 3,
-      barHeight: .7,
-      barWidth: 3,
-      height: 80,
-      cursorWidth: 4,
-    });
-  wavesurfer.load('../audio/FLYFH.mp3');
-
-  </script>
-
   <!-- Bootstrap core JavaScript -->
   <!-- <script src="js/TweenLite.min.js"></script>
       <script src="js/EasePack.min.js"></script>
@@ -158,77 +145,92 @@
   <!-- <script src="../js/generic.min.js"></script> -->
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   <script>
-    wavesurfer.on('ready', function () {
-      $('#universe').remove();
-      anime.timeline({
-        targets: ".artwork-cover .artwork",
-        easing: "easeOutExpo",
-      })
-      .add({
-        opacity: [0,1],
-        translateY: [100,0],
-        duration: 2000,
-      })
-      .add({
-        targets: ".artwork-cover .vinyl",
-        opacity: 1,
-        top: ['35%', 0],
-        duration: 1500,
-      },'-=700')
-      .add({
-        targets: ".as-player .title",
-        opacity: [0,1],
-        translateY: [40, 0],
-        duration: 700,
-      })
-      .add({
-        targets: ".as-player .artist",
-        opacity: [0,1],
-        translateY: [40, 0],
-        duration: 700,
-      }, '-=500')
-      .add({
-        targets: ".as-player .waveform",
-        opacity: [0,1],
-        translateY: [40, 0],
-        duration: 700,
-      }, '-=500')
-      .add({
-        targets: ".as-player .play-pause",
-        opacity: [0,1],
-        translateY: [40, 0],
-        duration: 700,
-      }, '-=500')
-      .add({
-        targets: ".as-player .footer",
-        opacity: [0,1],
-        translateY: [40, 0],
-        duration: 700,
-      }, '-=500')
-    });
-
     var icon = $('.play');
-    $(document).ready(function () {
+    document.addEventListener('DOMContentLoaded', function () {
+      var song = document.getElementById('song');
+      var wavesurfer = WaveSurfer.create({
+        container: document.querySelector('#waveform'),
+        waveColor: '#a02a21',
+        backend: 'MediaElement',
+        progressColor: '#ed1b16',
+        barGap: 3,
+        barHeight: .7,
+        barWidth: 3,
+        height: 80,
+        cursorWidth: 4,
+      });
+      wavesurfer.load(song);
+      wavesurfer.load('../audio/FLYFH.mp3');
+
+      wavesurfer.on('ready', function () {
+        wavesurfer.play();
+        $('#universe').remove();
+        anime.timeline({
+          targets: ".artwork-cover .artwork",
+          easing: "easeOutExpo",
+        })
+        .add({
+          opacity: [0,1],
+          translateY: [100,0],
+          duration: 2000,
+        })
+        .add({
+          targets: ".artwork-cover .vinyl",
+          opacity: 1,
+          top: ['35%', 0],
+          duration: 1500,
+        },'-=700')
+        .add({
+          targets: ".as-player .title",
+          opacity: [0,1],
+          translateY: [40, 0],
+          duration: 700,
+        }, '-=500')
+        .add({
+          targets: ".as-player .artist",
+          opacity: [0,1],
+          translateY: [40, 0],
+          duration: 700,
+        }, '-=500')
+        .add({
+          targets: ".as-player .waveform",
+          opacity: [0,1],
+          translateY: [40, 0],
+          duration: 700,
+        }, '-=500')
+        .add({
+          targets: ".as-player .play-pause",
+          opacity: [0,1],
+          translateY: [40, 0],
+          duration: 700,
+        }, '-=500')
+        .add({
+          targets: ".as-player .footer",
+          opacity: [0,1],
+          translateY: [40, 0],
+          duration: 700,
+        }, '-=500')
+      });
+
       icon.click(function () {
-        if(icon.hasClass('active')){
+        if (icon.hasClass('active')) {
           wavesurfer.pause();
-          $('.vinyl').css('animationPlayState','paused');
-        }else{
+          $('.vinyl').css('animationPlayState', 'paused');
+        } else {
           wavesurfer.play();
           $('.vinyl').css('animationPlayState', 'running');
         }
         icon.toggleClass('active');
         return false;
       });
+
+      // $(this).click(function () {
+      //   $('.vinyl').css('animationPlayState', 'running');
+      //   icon.addClass('active');
+      // });
     });
 
-     $(document).ready(function () {
-       $(this).click(function(){
-         wavesurfer.play();
-         $('.vinyl').css('animationPlayState', 'running');
-         icon.addClass('active');
-       });
-     });
+
 
     // $("#seek").bind("change", function() {
     //   song.currentTime = $(this).val();               
