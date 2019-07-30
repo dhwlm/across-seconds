@@ -45,7 +45,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <meta name="google-site-verification" content="bMfbVCGaxYtesicWosp_RcLFzemk--AOsk4w4i7siFs" />
   <!-- <script src="../js/wavesurfer.min.js"></script> -->
-  <script src="https://unpkg.com/wavesurfer.js"></script>
+  <script src="../js/wavesurfer.min.js"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-98471073-5"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -155,6 +155,8 @@
   <script>
     var icon = $('.play');
     document.addEventListener('DOMContentLoaded', function () {
+      
+
       var song = document.getElementById('song');
       var wavesurfer = WaveSurfer.create({
         container: document.querySelector('#waveform'),
@@ -167,58 +169,59 @@
         height: 80,
         cursorWidth: 4,
       });
-      wavesurfer.load(song);
       wavesurfer.load('../audio/FLYFH.mp3');
 
       wavesurfer.on('ready', function () {
         wavesurfer.play();
+
         icon.trigger('click');
         $('#universe').remove();
         anime.timeline({
           targets: ".artwork-cover .artwork",
           easing: "easeOutExpo",
         })
-        .add({
-          opacity: [0,1],
-          translateY: [100,0],
-          duration: 2000,
-        })
-        .add({
-          targets: ".artwork-cover .vinyl",
-          opacity: 1,
-          top: ['35%', 0],
-          duration: 1500,
-        },'-=700')
-        .add({
-          targets: ".as-player .title",
-          opacity: [0,1],
-          translateY: [40, 0],
-          duration: 700,
-        }, '-=500')
-        .add({
-          targets: ".as-player .artist",
-          opacity: [0,1],
-          translateY: [40, 0],
-          duration: 700,
-        }, '-=500')
-        .add({
-          targets: ".as-player .waveform",
-          opacity: [0,1],
-          translateY: [40, 0],
-          duration: 700,
-        }, '-=500')
-        .add({
-          targets: ".as-player .play-pause",
-          opacity: [0,1],
-          translateY: [40, 0],
-          duration: 700,
-        }, '-=500')
-        .add({
-          targets: ".as-player .footer",
-          opacity: [0,1],
-          translateY: [40, 0],
-          duration: 700,
-        }, '-=500')
+          .add({
+            opacity: [0, 1],
+            translateY: [100, 0],
+            duration: 2000,
+          })
+          .add({
+            targets: ".artwork-cover .vinyl",
+            opacity: 1,
+            top: ['35%', 0],
+            duration: 1500,
+          }, '-=700')
+          .add({
+            targets: ".as-player .title",
+            opacity: [0, 1],
+            translateY: [40, 0],
+            duration: 700,
+          }, '-=500')
+          .add({
+            targets: ".as-player .artist",
+            opacity: [0, 1],
+            translateY: [40, 0],
+            duration: 700,
+          }, '-=500')
+          .add({
+            targets: ".as-player .waveform",
+            opacity: [0, 1],
+            translateY: [40, 0],
+            duration: 700,
+          }, '-=500')
+          .add({
+            targets: ".as-player .play-pause",
+            opacity: [0, 1],
+            translateY: [40, 0],
+            duration: 700,
+          }, '-=500')
+          .add({
+            targets: ".as-player .footer",
+            opacity: [0, 1],
+            translateY: [40, 0],
+            duration: 700,
+          }, '-=500');
+        
       });
 
       icon.click(function () {
