@@ -172,9 +172,6 @@
       wavesurfer.load('../audio/FLYFH.mp3');
 
       wavesurfer.on('ready', function () {
-        wavesurfer.play();
-
-        icon.trigger('click');
         $('#universe').remove();
         anime.timeline({
           targets: ".artwork-cover .artwork",
